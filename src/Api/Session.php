@@ -8,16 +8,15 @@ use Ebay\Buy\Order\Model\GuestCheckoutSessionResponseV2;
 use Ebay\Buy\Order\Model\ShippingAddressImpl;
 use Ebay\Buy\Order\Model\UpdateQuantity;
 use Ebay\Buy\Order\Model\UpdateShippingOption;
+use OpenAPI\Runtime\UnexpectedResponse;
 
 class Session extends AbstractAPI
 {
     /**
-     * <span class="tablenote"><b>Note:</b> This version of the Order API (v2)
-     * currently only supports the guest payment flow for eBay managed payments. To
-     * view the v1_beta version of the Order API, which includes both member and guest
-     * checkout payment flows, refer to the <a
-     * href="/api-docs/buy/order_v1/resources/methods">Order_v1 API</a>
-     * documentation.</span><br /><br /><a
+     * <span class="tablenote"><b>Note:</b> The Order API (v2) currently only supports
+     * the guest payment/checkout flow. If you need to support member payment/checkout
+     * flow, use the <a href="/api-docs/buy/order_v1/resources/methods">v1_beta
+     * version</a> of the Order API.</span><br /><br /><a
      * href="https://developer.ebay.com/api-docs/static/versioning.html#limited"
      * target="_blank"><img src="/cms/img/docs/partners-api.svg" class="legend-icon
      * partners-icon"  alt="Limited Release" title="Limited Release" />(Limited
@@ -51,9 +50,9 @@ class Session extends AbstractAPI
      *                                         href="/api-docs/static/rest-request-components.html#marketpl"
      *                                         target="_blank">Marketplace ID values</a> for a list of supported values.
      *
-     * @return GuestCheckoutSessionResponseV2
+     * @return GuestCheckoutSessionResponseV2|UnexpectedResponse
      */
-    public function applyGuestCoupon(string $checkoutSessionId, CouponRequest $Model, array $headers = []): GuestCheckoutSessionResponseV2
+    public function applyGuestCoupon(string $checkoutSessionId, CouponRequest $Model, array $headers = [])
     {
         return $this->request(
         'applyGuestCoupon',
@@ -66,12 +65,10 @@ class Session extends AbstractAPI
     }
 
     /**
-     * <span class="tablenote"><b>Note:</b> This version of the Order API (v2)
-     * currently only supports the guest payment flow for eBay managed payments. To
-     * view the v1_beta version of the Order API, which includes both member and guest
-     * checkout payment flows, refer to the <a
-     * href="/api-docs/buy/order_v1/resources/methods">Order_v1 API</a>
-     * documentation.</span><br /><br /><a
+     * <span class="tablenote"><b>Note:</b> The Order API (v2) currently only supports
+     * the guest payment/checkout flow. If you need to support member payment/checkout
+     * flow, use the <a href="/api-docs/buy/order_v1/resources/methods">v1_beta
+     * version</a> of the Order API.</span><br /><br /><a
      * href="https://developer.ebay.com/api-docs/static/versioning.html#limited"
      * target="_blank"><img src="/cms/img/docs/partners-api.svg" class="legend-icon
      * partners-icon"  alt="Limited Release" title="Limited Release" />(Limited
@@ -102,9 +99,9 @@ class Session extends AbstractAPI
      *                                  href="/api-docs/static/rest-request-components.html#marketpl"
      *                                  target="_blank">Marketplace ID values</a> for a list of supported values.
      *
-     * @return GuestCheckoutSessionResponseV2
+     * @return GuestCheckoutSessionResponseV2|UnexpectedResponse
      */
-    public function get(string $checkoutSessionId, array $headers = []): GuestCheckoutSessionResponseV2
+    public function get(string $checkoutSessionId, array $headers = [])
     {
         return $this->request(
         'getGuestCheckoutSession',
@@ -117,12 +114,10 @@ class Session extends AbstractAPI
     }
 
     /**
-     * <span class="tablenote"><b>Note:</b> This version of the Order API (v2)
-     * currently only supports the guest payment flow for eBay managed payments. To
-     * view the v1_beta version of the Order API, which includes both member and guest
-     * checkout payment flows, refer to the <a
-     * href="/api-docs/buy/order_v1/resources/methods">Order_v1 API</a>
-     * documentation.</span><br /><br /><a
+     * <span class="tablenote"><b>Note:</b> The Order API (v2) currently only supports
+     * the guest payment/checkout flow. If you need to support member payment/checkout
+     * flow, use the <a href="/api-docs/buy/order_v1/resources/methods">v1_beta
+     * version</a> of the Order API.</span><br /><br /><a
      * href="https://developer.ebay.com/api-docs/static/versioning.html#limited"
      * target="_blank"><img src="/cms/img/docs/partners-api.svg" class="legend-icon
      * partners-icon"  alt="Limited Release" title="Limited Release" />(Limited
@@ -162,9 +157,9 @@ class Session extends AbstractAPI
      *                                                     href="/api-docs/static/rest-request-components.html#marketpl"
      *                                                     target="_blank">Marketplace ID values</a> for a list of supported values.
      *
-     * @return GuestCheckoutSessionResponseV2
+     * @return GuestCheckoutSessionResponseV2|UnexpectedResponse
      */
-    public function initiate(CreateGuestCheckoutSessionRequestV2 $Model, array $headers = []): GuestCheckoutSessionResponseV2
+    public function initiate(CreateGuestCheckoutSessionRequestV2 $Model, array $headers = [])
     {
         return $this->request(
         'initiateGuestCheckoutSession',
@@ -177,12 +172,10 @@ class Session extends AbstractAPI
     }
 
     /**
-     * <span class="tablenote"><b>Note:</b> This version of the Order API (v2)
-     * currently only supports the guest payment flow for eBay managed payments. To
-     * view the v1_beta version of the Order API, which includes both member and guest
-     * checkout payment flows, refer to the <a
-     * href="/api-docs/buy/order_v1/resources/methods">Order_v1 API</a>
-     * documentation.</span><br /><br /><a
+     * <span class="tablenote"><b>Note:</b> The Order API (v2) currently only supports
+     * the guest payment/checkout flow. If you need to support member payment/checkout
+     * flow, use the <a href="/api-docs/buy/order_v1/resources/methods">v1_beta
+     * version</a> of the Order API.</span><br /><br /><a
      * href="https://developer.ebay.com/api-docs/static/versioning.html#limited"
      * target="_blank"><img src="/cms/img/docs/partners-api.svg" class="legend-icon
      * partners-icon"  alt="Limited Release" title="Limited Release" />(Limited
@@ -215,9 +208,9 @@ class Session extends AbstractAPI
      *                                         href="/api-docs/static/rest-request-components.html#marketpl"
      *                                         target="_blank">Marketplace ID values</a> for a list of supported values.
      *
-     * @return GuestCheckoutSessionResponseV2
+     * @return GuestCheckoutSessionResponseV2|UnexpectedResponse
      */
-    public function removeGuestCoupon(string $checkoutSessionId, CouponRequest $Model, array $headers = []): GuestCheckoutSessionResponseV2
+    public function removeGuestCoupon(string $checkoutSessionId, CouponRequest $Model, array $headers = [])
     {
         return $this->request(
         'removeGuestCoupon',
@@ -230,12 +223,10 @@ class Session extends AbstractAPI
     }
 
     /**
-     * <span class="tablenote"><b>Note:</b> This version of the Order API (v2)
-     * currently only supports the guest payment flow for eBay managed payments. To
-     * view the v1_beta version of the Order API, which includes both member and guest
-     * checkout payment flows, refer to the <a
-     * href="/api-docs/buy/order_v1/resources/methods">Order_v1 API</a>
-     * documentation.</span><br /><br /><a
+     * <span class="tablenote"><b>Note:</b> The Order API (v2) currently only supports
+     * the guest payment/checkout flow. If you need to support member payment/checkout
+     * flow, use the <a href="/api-docs/buy/order_v1/resources/methods">v1_beta
+     * version</a> of the Order API.</span><br /><br /><a
      * href="https://developer.ebay.com/api-docs/static/versioning.html#limited"
      * target="_blank"><img src="/cms/img/docs/partners-api.svg" class="legend-icon
      * partners-icon"  alt="Limited Release" title="Limited Release" />(Limited
@@ -267,9 +258,9 @@ class Session extends AbstractAPI
      *                                          href="/api-docs/static/rest-request-components.html#marketpl"
      *                                          target="_blank">Marketplace ID values</a> for a list of supported values.
      *
-     * @return GuestCheckoutSessionResponseV2
+     * @return GuestCheckoutSessionResponseV2|UnexpectedResponse
      */
-    public function updateGuestQuantity(string $checkoutSessionId, UpdateQuantity $Model, array $headers = []): GuestCheckoutSessionResponseV2
+    public function updateGuestQuantity(string $checkoutSessionId, UpdateQuantity $Model, array $headers = [])
     {
         return $this->request(
         'updateGuestQuantity',
@@ -282,12 +273,10 @@ class Session extends AbstractAPI
     }
 
     /**
-     * <span class="tablenote"><b>Note:</b> This version of the Order API (v2)
-     * currently only supports the guest payment flow for eBay managed payments. To
-     * view the v1_beta version of the Order API, which includes both member and guest
-     * checkout payment flows, refer to the <a
-     * href="/api-docs/buy/order_v1/resources/methods">Order_v1 API</a>
-     * documentation.</span><br /><br /><a
+     * <span class="tablenote"><b>Note:</b> The Order API (v2) currently only supports
+     * the guest payment/checkout flow. If you need to support member payment/checkout
+     * flow, use the <a href="/api-docs/buy/order_v1/resources/methods">v1_beta
+     * version</a> of the Order API.</span><br /><br /><a
      * href="https://developer.ebay.com/api-docs/static/versioning.html#limited"
      * target="_blank"><img src="/cms/img/docs/partners-api.svg" class="legend-icon
      * partners-icon"  alt="Limited Release" title="Limited Release" />(Limited
@@ -323,9 +312,9 @@ class Session extends AbstractAPI
      *                                               href="/api-docs/static/rest-request-components.html#marketpl"
      *                                               target="_blank">Marketplace ID values</a> for a list of supported values.
      *
-     * @return GuestCheckoutSessionResponseV2
+     * @return GuestCheckoutSessionResponseV2|UnexpectedResponse
      */
-    public function updateGuestShippingAddress(string $checkoutSessionId, ShippingAddressImpl $Model, array $headers = []): GuestCheckoutSessionResponseV2
+    public function updateGuestShippingAddress(string $checkoutSessionId, ShippingAddressImpl $Model, array $headers = [])
     {
         return $this->request(
         'updateGuestShippingAddress',
@@ -338,12 +327,10 @@ class Session extends AbstractAPI
     }
 
     /**
-     * <span class="tablenote"><b>Note:</b> This version of the Order API (v2)
-     * currently only supports the guest payment flow for eBay managed payments. To
-     * view the v1_beta version of the Order API, which includes both member and guest
-     * checkout payment flows, refer to the <a
-     * href="/api-docs/buy/order_v1/resources/methods">Order_v1 API</a>
-     * documentation.</span><br /><br /><a
+     * <span class="tablenote"><b>Note:</b> The Order API (v2) currently only supports
+     * the guest payment/checkout flow. If you need to support member payment/checkout
+     * flow, use the <a href="/api-docs/buy/order_v1/resources/methods">v1_beta
+     * version</a> of the Order API.</span><br /><br /><a
      * href="https://developer.ebay.com/api-docs/static/versioning.html#limited"
      * target="_blank"><img src="/cms/img/docs/partners-api.svg" class="legend-icon
      * partners-icon"  alt="Limited Release" title="Limited Release" />(Limited
@@ -377,9 +364,9 @@ class Session extends AbstractAPI
      *                                                href="/api-docs/static/rest-request-components.html#marketpl"
      *                                                target="_blank">Marketplace ID values</a> for a list of supported values.
      *
-     * @return GuestCheckoutSessionResponseV2
+     * @return GuestCheckoutSessionResponseV2|UnexpectedResponse
      */
-    public function updateGuestShippingOption(string $checkoutSessionId, UpdateShippingOption $Model, array $headers = []): GuestCheckoutSessionResponseV2
+    public function updateGuestShippingOption(string $checkoutSessionId, UpdateShippingOption $Model, array $headers = [])
     {
         return $this->request(
         'updateGuestShippingOption',

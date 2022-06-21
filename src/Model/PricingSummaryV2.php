@@ -59,7 +59,7 @@ class PricingSummaryV2 extends AbstractModel
      * href="https://pages.ebay.com/seller-center/shipping/global-shipping-program.html">Global
      * Shipping Program</a> import charges, for all the line items in the order.
      *
-     * @var \Ebay\Buy\Order\Model\Amount
+     * @var \Ebay\Buy\Order\Model\ImportChargesV2
      */
     public $importCharges = null;
 

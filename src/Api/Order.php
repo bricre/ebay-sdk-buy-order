@@ -3,16 +3,15 @@
 namespace Ebay\Buy\Order\Api;
 
 use Ebay\Buy\Order\Model\GuestPurchaseOrderV2;
+use OpenAPI\Runtime\UnexpectedResponse;
 
 class Order extends AbstractAPI
 {
     /**
-     * <span class="tablenote"><b>Note:</b> This version of the Order API (v2)
-     * currently only supports the guest payment flow for eBay managed payments. To
-     * view the v1_beta version of the Order API, which includes both member and guest
-     * checkout payment flows, refer to the <a
-     * href="/api-docs/buy/order_v1/resources/methods">Order_v1 API</a>
-     * documentation.</span><br /><br /><a
+     * <span class="tablenote"><b>Note:</b> The Order API (v2) currently only supports
+     * the guest payment/checkout flow. If you need to support member payment/checkout
+     * flow, use the <a href="/api-docs/buy/order_v1/resources/methods">v1_beta
+     * version</a> of the Order API.</span><br /><br /><a
      * href="https://developer.ebay.com/api-docs/static/versioning.html#limited"
      * target="_blank"><img src="/cms/img/docs/partners-api.svg" class="legend-icon
      * partners-icon"  alt="Limited Release" title="Limited Release" />(Limited
@@ -47,9 +46,9 @@ class Order extends AbstractAPI
      *                                href="/api-docs/buy/static/api-order.html">Order API</a> in the Buying
      *                                Integration Guide.</span>
      *
-     * @return GuestPurchaseOrderV2
+     * @return GuestPurchaseOrderV2|UnexpectedResponse
      */
-    public function get(string $purchaseOrderId): GuestPurchaseOrderV2
+    public function get(string $purchaseOrderId)
     {
         return $this->request(
         'getGuestPurchaseOrder',
